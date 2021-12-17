@@ -14,7 +14,7 @@ This currently builds osm2pgsql for Debian from a specific tag; see the Dockerfi
 
 Once the image is built, you can run a single-use container with osm2pgsql. Args will be passed to bash, so you will have access to environment variables in your run command.
 
-    # docker run -i -t --rm openfirmware/osm2pgsql -c 'osm2pgsql -h'
+    # docker run -i -t --rm ms-webdev/osm2pgsql -c 'osm2pgsql -h'
 
 When used with a postgres-osm container, it can import data directly into the database:
 
