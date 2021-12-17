@@ -1,8 +1,7 @@
 # DOCKER-VERSION 1.5.0
 # VERSION 0.2
 
-FROM debian:wheezy
-MAINTAINER James Badger <james@jamesbadger.ca>
+FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
