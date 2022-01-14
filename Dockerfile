@@ -1,7 +1,7 @@
 # DOCKER-VERSION 1.5.0
 # VERSION 0.2
 
-FROM debian:jessie
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
