@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y \
     osm2pgsql
     
 
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/ash"]
