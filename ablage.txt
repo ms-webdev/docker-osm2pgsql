@@ -1,0 +1,3 @@
+[out:xml][date:"2021-05-30T00:00:00Z"];relation(957703);(._;>;);out meta qt;
+
+[out:xml][date:"2022-01-14T00:00:00Z"];relation(957703);(._;>;);out meta qt;

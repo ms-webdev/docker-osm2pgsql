@@ -46,5 +46,5 @@ This Dockerfile was built with information from the [Ubuntu 14.04 Switch2OSM gui
 # Extract example
 
 ```
-docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_single_timestamp.osm'
+docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_latest.osm'
 ```
