@@ -5,9 +5,10 @@ FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get install make cmake g++ libboost-dev libboost-system-dev \
-  libboost-filesystem-dev libexpat1-dev zlib1g-dev \
-  libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
+RUN apt-get update && apt-get install -y \
+    make cmake g++ libboost-dev libboost-system-dev \
+    libboost-filesystem-dev libexpat1-dev zlib1g-dev \
+    libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
 
 ENV HOME /root
 ENV OSM2PGSQL_VERSION 1.5.2
