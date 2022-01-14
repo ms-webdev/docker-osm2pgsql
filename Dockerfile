@@ -1,7 +1,8 @@
 # DOCKER-VERSION 1.5.0
 # VERSION 0.2
 
-FROM ubuntu:20.04
+FROM scratch
+# FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
