@@ -6,6 +6,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y \
+    git-core \
     make cmake g++ libboost-dev libboost-system-dev \
     libboost-filesystem-dev libexpat1-dev zlib1g-dev \
     libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
