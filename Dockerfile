@@ -5,7 +5,7 @@ FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN sudo apt-get install make cmake g++ libboost-dev libboost-system-dev \
+RUN apt-get install make cmake g++ libboost-dev libboost-system-dev \
   libboost-filesystem-dev libexpat1-dev zlib1g-dev \
   libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
 
@@ -19,6 +19,6 @@ RUN mkdir src &&\
     mkdir build && cd build &&\
     cmake .. &&\
     make &&\
-    make install &&\    
+    make install   
 
 ENTRYPOINT ["/bin/bash"]
