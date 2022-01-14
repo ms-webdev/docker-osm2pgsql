@@ -2,6 +2,15 @@
 
 A Docker image with [osm2pgsql](https://github.com/openstreetmap/osm2pgsql), the tool for importing OpenStreetMap data into a Postgresql database. Intended to be used with [openfirmware/docker-postgres-osm](https://github.com/openfirmware/docker-postgres-osm).
 
+## Vorbereitung Postgis
+https://registry.hub.docker.com/r/postgis/postgis/
+```
+# pull image
+docker pull postgis/postgis
+# run
+docker run --name osm-postgres -e POSTGRES_HOST_AUTH_METHOD=trust -p 25060:5432 -d postgis/postgis
+```
+
 ## Build Instructions
 
 Can be built from the Dockerfile:
@@ -34,3 +43,8 @@ This Dockerfile was built with information from the [Ubuntu 14.04 Switch2OSM gui
 * [Postgres Image](https://registry.hub.docker.com/_/postgres/)
 * [Postgres Image Repo](https://github.com/docker-library/postgres)
 
+# Extract example
+
+```
+docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_single_timestamp.osm'
+```
