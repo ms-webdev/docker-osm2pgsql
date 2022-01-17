@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
 
 ENV HOME /root
-# ENV OSM2PGSQL_VERSION 1.5.2
-ENV OSM2PGSQL_VERSION 1.4.2
+ENV OSM2PGSQL_VERSION 1.5.2
+# ENV OSM2PGSQL_VERSION 1.4.2
 # ENV OSM2PGSQL_VERSION 1.2.2
 
 RUN mkdir src &&\
