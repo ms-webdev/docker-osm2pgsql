@@ -40,8 +40,18 @@ This Dockerfile was built with information from the [Ubuntu 14.04 Switch2OSM gui
 * [Postgres Image](https://registry.hub.docker.com/_/postgres/)
 * [Postgres Image Repo](https://github.com/docker-library/postgres)
 
-# Extract example
+# Extract example (win)
 
 ```
 docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_old.osm'
+```
+
+# Extract example (ubuntu)
+
+```
+cd /home
+
+wget -c https://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf
+
+docker run -i -t --rm --link osm-postgres:pg -v /home:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 3000 -l --database test --username postgres --host pg --port 5432 /osm/saarland-latest.osm.pbf'
 ```
