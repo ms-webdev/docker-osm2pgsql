@@ -1,18 +1,14 @@
-# DOCKER-VERSION 1.5.0
-# VERSION 0.2
-
-FROM ubuntu:20.04
+FROM alpine:3.15
 
 ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
-    git-core \
-    make cmake g++ libboost-dev libboost-system-dev \
-    libboost-filesystem-dev libexpat1-dev zlib1g-dev \
-    libbz2-dev libpq-dev libproj-dev lua5.3 liblua5.3-dev pandoc
+RUN apk --update-cache add git cmake make g++ boost-dev expat-dev \
+  bzip2-dev zlib-dev libpq proj-dev lua5.3-dev postgresql-dev
 
 ENV HOME /root
-ENV OSM2PGSQL_VERSION 1.5.2
+# ENV OSM2PGSQL_VERSION 1.5.2
+ENV OSM2PGSQL_VERSION 1.4.2
 
 RUN mkdir src &&\
     cd src &&\
@@ -23,4 +19,4 @@ RUN mkdir src &&\
     make &&\
     make install   
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/sh"]

@@ -48,3 +48,12 @@ This Dockerfile was built with information from the [Ubuntu 14.04 Switch2OSM gui
 ```
 docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_old.osm'
 ```
+
+```
+docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql-alpine -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_old.osm'
+```
+
+
+```
+docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql-alpine -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/bayern-latest.osm.pbf'
+```
