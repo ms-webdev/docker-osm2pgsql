@@ -13,9 +13,9 @@ docker run --name osm-postgres -e POSTGRES_HOST_AUTH_METHOD=trust -p 25060:5432 
 
 ## Build Instructions
 
-Can be built from the Dockerfile:
+Can be built from the Dockerfile (#osm2pgsql-version, look at releases/tags):
 
-    # docker build -t ms-webdev/osm2pgsql github.com/ms-webdev/docker-osm2pgsql.git
+    # docker build -t ms-webdev/osm2pgsql github.com/ms-webdev/docker-osm2pgsql.git#1.2.2
 
 This currently builds osm2pgsql for Debian from a specific tag; see the Dockerfile for the specific version. Alternatively, specify the tag and download the image from the Docker Hub.
 
