@@ -14,6 +14,8 @@ docker run --name osm-postgres -e POSTGRES_HOST_AUTH_METHOD=trust -p 25060:5432 
 
 Can be built from the Dockerfile (#osm2pgsql-version, look at releases/tags):
 
+    docker build -t osm2pgsql .
+    
     # docker build -t ms-webdev/osm2pgsql github.com/ms-webdev/docker-osm2pgsql.git#1.2.2
 
 This currently builds osm2pgsql for Ubuntu from a specific tag; see the Dockerfile for the specific version. Alternatively, specify the tag and download the image from the Docker Hub.
@@ -43,7 +45,7 @@ This Dockerfile was built with information from the [Ubuntu 14.04 Switch2OSM gui
 # Extract example (win)
 
 ```
-docker run -i -t --rm --link osm-postgres:pg -v C:\Users\priva\Downloads\_data:/osm ms-webdev/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export_old.osm'
+docker run -i -t --rm --link osm-postgres:pg -v D:\Benutzer\Downloads\_osm_data:/osm osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 -l --database test --username postgres --host pg --port 5432 /osm/export.osm'
 ```
 
 # Extract example (ubuntu)
